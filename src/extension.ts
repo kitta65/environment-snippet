@@ -6,6 +6,7 @@ type EnvVal = {
 };
 
 export function activate(context: vscode.ExtensionContext) {
+  // TODO enable to filter environment varialbes by prefix
   const envs: EnvVal[] = Object.entries(process.env)
     .map(([k, v]) => {
       return { name: k, value: v || "" };

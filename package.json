@@ -1,6 +1,6 @@
 {
-  "name": "local-user-snippets",
-  "displayName": "local-user-snippets",
+  "name": "environment-snippets",
+  "displayName": "environment-snippets",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -9,12 +9,14 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": ["onStartupFinished"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "local-user-snippets.helloWorld",
+        "command": "environment-snippets.helloWorld",
         "title": "Hello World"
       }
     ]

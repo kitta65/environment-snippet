@@ -1,1 +1,1 @@
-# Local User Snippets
+# Environment Snippets

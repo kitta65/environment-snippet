@@ -1,13 +1,26 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log('activated!');
+  const provider = vscode.languages.registerCompletionItemProvider(
+    { pattern: "**" }, // all file types
+    { provideCompletionItems },
+  );
+  context.subscriptions.push(provider);
+}
 
-	const disposable = vscode.commands.registerCommand('local-user-snippets.helloWorld', () => {
-		vscode.window.showInformationMessage('Hello World!');
-	});
+function provideCompletionItems(
+  _doc: vscode.TextDocument,
+  _pos: vscode.Position,
+  _tkn: vscode.CancellationToken,
+  _ctx: vscode.CompletionContext,
+) {
+  const snippetCompletion = new vscode.CompletionItem("myemail");
+  snippetCompletion.insertText = new vscode.SnippetString(
+    "myemail@example.com${0}",
+  );
+  snippetCompletion.documentation = "insert my email address";
 
-	context.subscriptions.push(disposable);
+  return [snippetCompletion];
 }
 
 export function deactivate() {}

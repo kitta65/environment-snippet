@@ -28,7 +28,7 @@
           "scope": "window",
           "type": "string",
           "default": "SNIPPET_",
-          "description": ""
+          "description": "if empty, register all environment variables as snippets"
         }
       }
     }

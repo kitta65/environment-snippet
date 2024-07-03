@@ -6,8 +6,22 @@ type EnvVal = {
 };
 
 export function activate(context: vscode.ExtensionContext) {
-  // TODO enable to filter environment varialbes by prefix
+  const prefix = vscode.workspace
+    .getConfiguration()
+    .get("environmentSnippet.prefix");
+
+  if (typeof prefix !== "string") {
+    // TODO error message
+    return;
+  }
+
   const envs: EnvVal[] = Object.entries(process.env)
+    .filter(([k, _]) => {
+      if (prefix === "") {
+        return true; // accept all environment variables
+      }
+      return k.startsWith(prefix);
+    })
     .map(([k, v]) => {
       return { name: k, value: v || "" };
     })

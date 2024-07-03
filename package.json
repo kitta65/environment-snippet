@@ -1,25 +1,37 @@
 {
-  "name": "environment-snippets",
-  "displayName": "environment-snippets",
+  "name": "environment-snippet",
+  "displayName": "environment-snippet",
   "description": "",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.90.0"
   },
+  "author": "kitta65",
+  "license": "MIT",
+  "publisher": "dr666m1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kitta65/environment-snippet"
+  },
   "categories": [
-    "Other"
+    "Snippets"
   ],
   "activationEvents": [
     "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "environment-snippets.helloWorld",
-        "title": "Hello World"
+    "configuration": {
+      "title": "Environment Snippet",
+      "properties": {
+        "environmentSnippet.prefix": {
+          "scope": "window",
+          "type": "string",
+          "default": "SNIPPET_",
+          "description": ""
+        }
       }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

@@ -32,7 +32,9 @@ export function activate(context: vscode.ExtensionContext) {
     {
       provideCompletionItems: () => {
         const completions = envs.map((e) => {
-          const snippetCompletion = new vscode.CompletionItem(e.name);
+          const snippetCompletion = new vscode.CompletionItem(
+            e.name.slice(prefix.length),
+          );
           snippetCompletion.insertText = new vscode.SnippetString(e.value);
           snippetCompletion.documentation = e.value;
           return snippetCompletion;

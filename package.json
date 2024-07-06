@@ -13,6 +13,7 @@
     "type": "git",
     "url": "https://github.com/kitta65/environment-snippet"
   },
+  "icon": "icon.png",
   "categories": [
     "Snippets"
   ],

@@ -39,7 +39,7 @@
     "compile": "tsc -p ./"
   },
   "devDependencies": {
-    "@types/node": "20.x",
+    "@types/node": "22.x",
     "@types/vscode": "^1.91.0",
     "@vscode/vsce": "^2.29.0",
     "typescript": "^5.5.3"
